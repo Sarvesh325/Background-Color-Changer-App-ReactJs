@@ -3,21 +3,54 @@ import React, { useState } from "react";
 function App() {
   const [color, setColor] = useState("");
   const handleClick = (event) => {
-    const name = event.target.name;
-    if (name === "blue") {
-      setColor("#0D6CFA");
-    } else if (name === "red") {
-      setColor("#DA3544");
-    } else if (name === "orange") {
-      setColor("#FDC007");
-    } else if (name === "green") {
-      setColor("#198754");
-    } else if (name === "grey") {
-      setColor("#6C747C");
-    } else if (name === "dark") {
-      setColor("#202528");
-    } else if (name === "white") {
-      setColor("#F9F8FA");
+    const colorName = event.target.name;
+    // if (colorName === "blue") {
+    //   setColor("#0D6CFA");
+    // } else if (colorName === "red") {
+    //   setColor("#DA3544");
+    // } else if (colorName === "orange") {
+    //   setColor("#FDC007");
+    // } else if (colorName === "green") {
+    //   setColor("#198754");
+    // } else if (colorName === "grey") {
+    //   setColor("#6C747C");
+    // } else if (colorName === "dark") {
+    //   setColor("#202528");
+    // } else if (colorName === "white") {
+    //   setColor("#F9F8FA");
+    // }
+
+    switch (colorName) {
+      case "blue":
+        setColor("#0D6CFA");
+        break;
+
+      case "red":
+        setColor("#DA3544");
+        break;
+
+      case "orange":
+        setColor("#FDC007");
+        break;
+
+      case "green":
+        setColor("#198754");
+        break;
+
+      case "grey":
+        setColor("#6C747C");
+        break;
+
+      case "dark":
+        setColor("#202528");
+        break;
+
+      case "white":
+        setColor("#F9F8FA");
+        break;
+
+      default:
+        setColor("black");
     }
   };
   return (
@@ -41,7 +74,7 @@ function App() {
           RED
         </button>
         <button
-          className="btn btn-warning flex flex-wrap justify-center me-2 shadow-lg  px-3 py-2 rounded-3xl"
+          className="btn btn-warning flex flex-wrap justify-center me-2 shadow-lg  px-3 py-2 rounded-3xl text-white"
           name="orange"
           onClick={handleClick}
         >
